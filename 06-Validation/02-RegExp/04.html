@@ -1,0 +1,41 @@
+<!--Email-Validation-->
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script type="text/javascript">
+        function validate() {
+            var user = document.getElementById("uname").value;
+
+            var regx = /^([a-z 0-9\.-]+)@([a-z0-9]+).([a-z]{2,8})(.[a-z]{2,8})?$/;
+            if (regx.test(user)) {
+                document.getElementById("luname").innerHTML = "Valid-User";
+                document.getElementById("luname").style.color = "Green";
+                document.getElementById("luname").style.visibility = "visible";
+
+
+            } else {
+                document.getElementById("luname").style.visibility = "visible";
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <form action="05-JSForm-Message.html">
+        <input type="text" id="uname" placeholder="Email ID"><br>
+        <label for="uname" id="luname" style="color: darkred; visibility: hidden;">Invalid </label><br>
+
+        <button type="button" onclick="validate()">Submit</button>
+        <br><br>
+        <img src="Email-validation.jpg" alt="" width="200" height="200">
+
+    </form>
+</body>
+
+</html>

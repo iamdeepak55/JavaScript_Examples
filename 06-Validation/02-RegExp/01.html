@@ -1,0 +1,49 @@
+<!--Regular Expresssion-->
+<!--
+
+Regular Expression are used to perform powerful patteren matching and search or replace functions on text
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script type="text/javascript">
+        function validate() {
+            let user = document.getElementById("uname").value;
+
+            let regx = /^[6-9]\w{9}$/;
+            if (regx.test(user)) {
+                document.getElementById("luname").style.visibility = "visible";
+                document.getElementById("luname").style.color = "green";
+                document.getElementById("luname").innerHTML = "Valid User";
+
+
+
+            } else {
+                document.getElementById("luname").style.visibility = "visible";
+
+
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <h2>Regular Expression in JS</h2>
+    <form>
+        <input type="text" id="uname" placeholder="Username"><br><br>
+        <label for="uname" id="luname" style="color: darkred; visibility: hidden">Invalid User</label>
+        <button type="button" onclick="validate()">Submit</button>
+    </form>
+</body>
+
+</html>

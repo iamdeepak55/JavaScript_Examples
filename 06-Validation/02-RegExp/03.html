@@ -1,0 +1,52 @@
+<!--Mobile phone Validation-->
+
+
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script type="text/javascript">
+        /* 
+            
+            \d - match any digit (equal to [0-9])
+            \w - match any word character (a-z A-z 0-9 & _)
+            \s - match whitespace word character (eg. space and tabs)
+            \t - match a tab only 
+            
+            */
+
+
+        function validate() {
+            var user = document.getElementById("uname").value;
+
+            var regx = /^[7-9]\d{9}$/;
+            if (regx.test(user)) {
+                document.getElementById("luname").innerHTML = "Valid-User";
+                document.getElementById("luname").style.color = "Green";
+                document.getElementById("luname").style.visibility = "visible";
+
+
+            } else {
+                document.getElementById("luname").style.visibility = "visible";
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <form action="05-JSForm-Message.html">
+        <input type="text" id="uname" placeholder="Mobile Number"><br>
+        <label for="uname" id="luname" style="color: darkred; visibility: hidden;">Invalid Username</label><br><br>
+
+        <button type="button" onclick="validate()">Submit</button>
+
+
+    </form>
+</body>
+
+</html>

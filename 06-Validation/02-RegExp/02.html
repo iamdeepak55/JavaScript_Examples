@@ -1,0 +1,56 @@
+<!--Regular Expression Character Set and Range-->
+
+
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script type="text/javascript">
+        /*
+        
+        /simple/
+        /[sdp]imple/
+        /[a-x]00/
+        /[a-x]00/i
+        /[a-x A-Z]00/
+        /[0-9]abc/
+        /[0-5]a[6-9]c/
+        /[^1abc]abc/
+        /[^0-9]abc/
+ 
+        */
+
+        function validate() {
+            var user = document.getElementById("uname").value;
+
+            var regx = /E001/i;
+            if (regx.test(user)) {
+                document.getElementById("luname").innerHTML = "Valid-User";
+                document.getElementById("luname").style.color = "Green";
+                document.getElementById("luname").style.visibility = "visible";
+
+
+            } else {
+                document.getElementById("luname").style.visibility = "visible";
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <form action="05-JSForm-Message.html">
+        <input type="text" id="uname" placeholder="Mobile Number"><br>
+        <label for="uname" id="luname" style="color: darkred; visibility: hidden;">Invalid Username</label><br><br>
+
+        <button type="button" onclick="validate()">Submit</button>
+
+
+    </form>
+</body>
+
+</html>

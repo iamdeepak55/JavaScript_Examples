@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-size: 22px;
+            height: 100vh;
+        }
+
+        #main-nav {
+            margin-top: 0px;
+            height: 70px;
+            width: 100%;
+            background-color: darkblue;
+        }
+
+        #main-nav ul {
+            list-style: none;
+            text-align: center;
+
+        }
+
+        #main-nav ul li {
+            display: inline-block;
+            line-height: 70px;
+
+        }
+
+        #main-nav ul li a {
+            text-decoration: none;
+            color: white;
+            width: 150px;
+            padding: 10px 20px;
+
+        }
+
+        #main-nav ul li a:hover {
+            background-color: deeppink;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="main-nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Service</a></li>
+
+        </ul>
+    </div>
+    <script>
+        let newLi = document.createElement("li");
+        let newA = document.createElement("a");
+        let newLi1 = document.createElement("li");
+        let newA1 = document.createElement("a");
+
+        let menu = document.getElementById("main-nav").getElementsByTagName("ul")[0];
+
+        menu.insertBefore(newLi1, menu.getElementsByTagName("li")[1]);
+
+
+        menu.appendChild(newLi);
+        newLi.appendChild(newA);
+        newA.innerHTML = "Contact Us";
+        newA.setAttribute('href', '#');
+
+
+        newLi1.appendChild(newA1);
+        newA1.innerHTML = "Blog";
+        newA1.setAttribute('href', '#');
+
+        menu.removeChild(newLi);
+
+    </script>
+
+</body>
+
+</html>
